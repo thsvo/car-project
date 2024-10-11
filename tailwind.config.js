@@ -13,5 +13,20 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        cardoctortheme: {
+          primary: "rgb(255, 56, 17)",
+          secondary: "#f6d860",
+          accent: "#37cdbe",
+          neutral: "#3d4451",
+          "base-100": "#ffffff",
+        },
+      },
+      "dark",
+      "cupcake",
+    ],
+  },
 };
