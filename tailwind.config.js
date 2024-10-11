@@ -17,8 +17,8 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        cardoctortheme: {
-          primary: "rgb(255, 56, 17)",
+        mytheme: {
+          primary: "#FF3811",
           secondary: "#f6d860",
           accent: "#37cdbe",
           neutral: "#3d4451",
