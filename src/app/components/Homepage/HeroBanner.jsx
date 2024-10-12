@@ -30,21 +30,40 @@ const HeroBanner = () => {
     },
   ];
   return (
-    <div className="carousel w-full">
-      {banners.map((banner, index) => (
-        <div key={index} className="carousel w-full h-screen">
-          <div id="slide1" className="carousel-item relative w-full">
-            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a href="#slide4" className="btn btn-circle">
+    <div className="container mx-auto text-white">
+      <div className="carousel  w-full mt-12">
+        {banners.map((banner, index) => (
+          <div
+            style={{
+              backgroundImage: `linear-gradient(45deg,rgba(7,25,82,0.7), rgba(0,0,0,0.3)), url(/assets/images/banner/${
+                index + 1
+              }.jpg)`,
+            }}
+            key={index}
+            id={`slide${index + 1}`}
+            className="carousel-item relative w-full bg-top bg-no-repeat h-[90vh] rounded-xl"
+          >
+            <div className="h-full w-full flex items-center pl-36">
+              <div className="space-y-6">
+                <h1 className="text-5xl font-bold">{banner.title}</h1>
+                <p>{banner.description}</p>
+                <button className="btn btn-primary mr-4">Discover More</button>
+                <button className="btn btn-outline text-white">
+                  Latest Project
+                </button>
+              </div>
+            </div>
+            <div className="absolute flex justify-between transform bottom-12 right-12">
+              <a href={banner.prev} className="btn btn-circle mr-6">
                 ❮
               </a>
-              <a href="#slide2" className="btn btn-circle">
+              <a href={banner.next} className="btn btn-circle">
                 ❯
               </a>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
